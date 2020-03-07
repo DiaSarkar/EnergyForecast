@@ -1,0 +1,21 @@
+{% load static %}
+<html>
+  <head>
+    <title>DATA LOADING PAGE</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"
+  
+  </head>
+  <body>
+
+    <div class="button_container">
+	    <p class="description">Load data file for Energy Forecast</p>
+      <button onclick=location.href="{% url 'loaddata' %}" class="btn"><span>Load CSV</span></button>
+      {% if objects %}
+      {{objects}}
+      {% endif %}
+      <!--<p class="link">
+        Design by 
+        <a href="https://dribbble.com/skytrip" target="_blank">SkyTrip</a>
+      </p>-->
+    </div>
+  </body>
