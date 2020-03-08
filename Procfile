@@ -1,0 +1,1 @@
+web: gunicorn EnergyForecast.wsgi --log-file -
