@@ -24,5 +24,6 @@ from forecastmodel.views import (
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('load/', load_file_page),
+    path('', load_file_page),
     path('loaddata/', load_file, name='loaddata'),
 ]
