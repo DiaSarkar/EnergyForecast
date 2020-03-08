@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -79,18 +80,26 @@ WSGI_APPLICATION = 'EnergyForecast.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mydb',
-        'USER': 'myuser',
-        'PASSWORD': 'mypass',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-
+      'default': dj_database_url.config(default='postgres://uowphygvpqoypv:5f727c814c534cec6387e4287ccf05a23804ea8f99c8611a861379d45ac836d7@ec2-54-246-89-234.eu-west-1.compute.amazonaws.com:5432/daibgtr0a8s837')
+      
+       
+#     #   dj_database_url.config()
+# # #         # 'ENGINE': 'django.db.backends.sqlite3',         
+#  #            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#              'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': 'mydb',
+#              'USER': 'myuser',
+# #             'USER': 'uowphygvpqoypv',
+#             'PASSWORD': 'mypass',
+# # #         'PASSWORD': '5f727c814c534cec6387e4287ccf05a23804ea8f99c8611a861379d45ac836d7',
+#              'HOST': 'localhost',
+# # #         'HOST': 'ec2-54-246-89-234.eu-west-1.compute.amazonaws.com'
+#              'PORT': '5432',
+      
+  }
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+#DATABASES = { 'default': dj_database_url.config() }
+#DATABASES['default'] = dj_database_url.config(default='postgres://uowphygvpqoypv:5f727c814c534cec6387e4287ccf05a23804ea8f99c8611a861379d45ac836d7@ec2-54-246-89-234.eu-west-1.compute.amazonaws.com:5432/daibgtr0a8s837')
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
