@@ -79,8 +79,8 @@ WSGI_APPLICATION = 'EnergyForecast.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-      'default': dj_database_url.config(default='postgres://uowphygvpqoypv:5f727c814c534cec6387e4287ccf05a23804ea8f99c8611a861379d45ac836d7@ec2-54-246-89-234.eu-west-1.compute.amazonaws.com:5432/daibgtr0a8s837')
+#DATABASES = {
+ #     'default': dj_database_url.config(default='postgres://uowphygvpqoypv:5f727c814c534cec6387e4287ccf05a23804ea8f99c8611a861379d45ac836d7@ec2-54-246-89-234.eu-west-1.compute.amazonaws.com:5432/daibgtr0a8s837')
       
        
 #     #   dj_database_url.config()
@@ -96,13 +96,24 @@ DATABASES = {
 # # #         'HOST': 'ec2-54-246-89-234.eu-west-1.compute.amazonaws.com'
 #              'PORT': '5432',
       
-  }
+  #}
 #DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 #DATABASES = { 'default': dj_database_url.config() }
 #DATABASES['default'] = dj_database_url.config(default='postgres://uowphygvpqoypv:5f727c814c534cec6387e4287ccf05a23804ea8f99c8611a861379d45ac836d7@ec2-54-246-89-234.eu-west-1.compute.amazonaws.com:5432/daibgtr0a8s837')
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
+
+DATABASES = {
+    'default' : {
+        'ENGINE': 'django.db.backends.postgresql', 
+        'NAME': 'Test',
+        'USER': 'postgres',
+        'PASSWORD': 'Phoenix2020',
+        'HOST': 'database-energy.cozo80jzrft1.us-east-2.rds.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
