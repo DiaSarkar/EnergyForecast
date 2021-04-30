@@ -12,6 +12,6 @@ psycopg2-pool==1.1
 pytz==2019.3
 requests==2.22.0
 sqlparse==0.3.0
-urllib3==1.25.6
+urllib3==1.25.8
 whitenoise==4.1.4
 pandas==1.0.1
